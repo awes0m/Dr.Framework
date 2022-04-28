@@ -38,6 +38,12 @@ class UserAdmin(BaseUserAdmin):
             # "date_joined"
             )}),
     )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'password1', 'password2')
+        }),
+    )
 
 
 # Register the user model with the admin site

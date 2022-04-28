@@ -77,3 +77,19 @@ class AdminSiteTests(TestCase):
         res = self.client.get(url)
 
         self.assertEqual(res.status_code, 200)
+
+    def test_create_user_page(self):
+        """
+        The test_create_user_page function tests
+        whether the create user page is accessible.
+        It does this by checking if the url for creating a new user exists,
+        and then checks if it returns a status code of 200
+
+        :param self: Access variables that belongs to the class
+        :return: The status code of the response
+        :doc-author: Trelent
+        """
+        url = reverse('admin:core_user_add')
+        res = self.client.get(url)
+
+        self.assertEqual(res.status_code, 200)
